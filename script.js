@@ -52,10 +52,14 @@ window.addEventListener("keydown", (e) => {
 });
 
 inputSide.addEventListener("keydown", (e) => {
-	if (e.key === "Enter" && e.target.value <= 100) {
-		sides = e.target.value;
-		createGrid(sides);
-		overlay.classList.remove("active");
-		e.target.value = "";
+	if (e.key === "Enter") {
+		const value = Number(e.target.value);
+
+		if (Number.isInteger(value) && value > 0 && value <= 100) {
+			sides = value;
+			createGrid(sides);
+			overlay.classList.remove("active");
+			e.target.value = "";
+		}
 	}
 });
