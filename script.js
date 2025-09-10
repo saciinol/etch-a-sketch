@@ -11,18 +11,27 @@ function createGrid(side) {
 
 		div.style.flex = `0 0 calc(${100 / side}%)`;
 
+		let hoverCount = 0;
+		let r, g, b;
+
 		container.appendChild(div);
 
 		div.addEventListener("mouseenter", () => {
-			const r = Math.floor(Math.random() * 256);
-			const g = Math.floor(Math.random() * 256);
-			const b = Math.floor(Math.random() * 256);
+			if (hoverCount === 0) {
+				r = Math.floor(Math.random() * 256);
+				g = Math.floor(Math.random() * 256);
+				b = Math.floor(Math.random() * 256);
+			}
 
-			div.style.backgroundColor = `rgb(${r} ${g} ${b})`;
-		});
+			hoverCount++;
 
-		div.addEventListener("mouseleave", () => {
-			div.style.backgroundColor = "white";
+			const factor = Math.max(0, 1 - hoverCount * 0.1);
+
+			const newR = Math.floor(r * factor);
+			const newG = Math.floor(g * factor);
+			const newB = Math.floor(b * factor);
+
+			div.style.backgroundColor = `rgb(${newR}, ${newG}, ${newB})`;
 		});
 	}
 
