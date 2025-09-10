@@ -14,11 +14,15 @@ function createGrid(side) {
 		container.appendChild(div);
 
 		div.addEventListener("mouseenter", () => {
-			div.classList.add("box-hover");
+			const r = Math.floor(Math.random() * 256);
+			const g = Math.floor(Math.random() * 256);
+			const b = Math.floor(Math.random() * 256);
+
+			div.style.backgroundColor = `rgb(${r} ${g} ${b})`;
 		});
 
 		div.addEventListener("mouseleave", () => {
-			div.classList.remove("box-hover");
+			div.style.backgroundColor = "white";
 		});
 	}
 

@@ -3,6 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-size: 10px;
+	background-color: black;
 }
 
 .container {
@@ -15,22 +16,18 @@
 
 .box {
 	aspect-ratio: 1;
-	background: black;
-	border: 2px solid white;
-}
-
-.box-hover {
 	background: white;
+	border: 2px solid black;
 }
 
 .newGridBtn {
 	display: block;
 	margin: 5px auto;
 	padding: 0.5rem 1rem;
-	color: white;
+	color: black;
 	font-size: 1.2rem;
-	background-color: black;
-	border: 1px solid black;
+	background-color: white;
+	border: 1px solid white;
 	cursor: pointer;
 }
 
@@ -39,8 +36,8 @@
 }
 
 .newGridBtn:active {
-	background-color: white;
-	color: black;
+	background-color: black;
+	color: white;
 }
 
 .overlay {
@@ -58,7 +55,8 @@
 }
 
 .newGrid {
-	background: white;
+	background: black;
+	color: white;
 	padding: 20px 30px;
 	border-radius: 12px;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -87,12 +85,13 @@ input[type="number"] {
 }
 
 label {
-   font-size: 2rem;
+	font-size: 2rem;
 }
 
 input {
-   border: 1px solide black;
-   outline: none;
-   padding: 1rem;
-   font-size: 2rem;
+	border: 1px solide white;
+	outline: none;
+	padding: 1rem;
+	font-size: 2rem;
+	color: white;
 }
